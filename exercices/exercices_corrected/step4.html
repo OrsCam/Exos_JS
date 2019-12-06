@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <title>STEP4</title>
+        <!-- INTRUCTIONS -->
+        <!-- Au passage de la souris sur le 'h1' changer la valeur du texte pour celui ci : 'Pouloulou, elle fait la go qui connais pas charo (Niska 91)' -->
+        <!-- Pour obtenir ce résultat vous devrez respectez certaines consignes :
+            Utiliser UN SEUL 'innerText' ainsi que la 'concaténation' des variables (exemple : var int3 = int1 + int2 | int3 vaut maintenant 91) -->
+        <!-- IL EST INTERDIT DE MODIFIER LE HTML VOUS DEVEZ SEULEMENT LINK VOTRE SCRIPT JS -->
+        <script type="text/javascript">
+                var text1 = "Pouloulou";
+                var text2 = "elle fait la go qui connais pas charo";
+                var int1 = 22;
+                var int2 = 69;
+        </script>
+    </head>
+    <body>
+        <h1>HOVER ME !</h1>
+
+    <!-- LINK SCRIPT HERE -->
+    <script type="text/javascript">
+        // on cible notre titre h1
+        var title = document.querySelector('h1');
+
+        // on récupère la valeur du text initial
+        var titleText = title.innerText;
+
+        // On adittionne nos valeur numérique pour obtenir l'affichage demander
+        var int3 = int1 + int2;
+
+        // On définis un évenement de type onmouseover sur notre titre h1
+        title.onmouseover = function() {
+            // On change le texte de notre titre en concatenant nos variables pour obtenir l'affichage voulue
+            title.innerText = text1 + ', ' + text2 + ' (Niska ' + int3 + ')';
+        }
+
+        // On définis un évenement de type onmouseout sur notre titre h1
+        title.onmouseout = function() {
+            // On change le texte de notre titre pour remettre sa valeur initial
+            title.innerHTML = titleText;
+        }
+    </script>
+    </body>
+</html>
